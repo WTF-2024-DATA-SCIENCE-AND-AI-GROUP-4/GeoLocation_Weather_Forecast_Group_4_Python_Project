@@ -73,3 +73,22 @@ def get_weather_data():
     except:
         pass
 print(get_weather_data())
+
+
+# temp = []
+# snowfall =
+# rainfall =
+# city =
+  
+def weather_conditions(temperature_2m):
+    temperature_2m = get_weather_data()
+    if temperature_2m<= 0:
+        print("There is going to be snowfall today")
+    elif 0 < temperature_2m < 27:
+            print("It's going to rain today")
+    elif temperature_2m > 27:
+            print("It's going to be a sunny day")
+    else :
+            print("No  weather information ")
+    print(weather_conditions(temperature_2m))
+    

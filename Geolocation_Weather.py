@@ -32,29 +32,24 @@ print(get_geolocation())
 # print(get_geolocation.__doc__)
 
 
-def get_weather_data():
+def get_weather_data(lat, lon):
     """Get the users location weather forecast using ip address and returning extracted information
 
     Parameters:
-       temperature in celsius
-       rain in milimeters
-       snowfall in centimeters
-       date and time
+       lat (float): latitude of user's location
+       lon (float): longitude of user's location
 
     Return:
-        lat (float): latitude of user's location
-        lon (float): longitude of user's location
-        city (str): city of user
-        country_code (str): country_code of user
+        date_list (list) : current date of the user
+        time_list (list): 24hourly time span 
+        rain_list (list): rain forecast for every hour of the day
+        temperature_list (list): temperature for every hour of the day.
+        snowfall_list (list) : snowfall forecast for every hour of the day.
     """
-    endpoint = 'https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m,rain,snowfall&forecast_days=1'
+    endpoint = f'https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lon}&hourly=temperature_2m,rain,snowfall&forecast_days=1'
 
     try:
-        payload = {
-            'q': 'Abuja,Nigeria',
-            'unit':'metrics',
-            }
-        response = requests.get(url=endpoint, params=payload)
+        response = requests.get(endpoint)
         print(response.status_code)
         data = response.json()
         date_time_list = data['hourly']['time']
@@ -63,13 +58,8 @@ def get_weather_data():
         rain_list= data['hourly']['rain']
         temperature_list = data['hourly']['temperature_2m']
         snowfall_list = data['hourly']['snowfall']
-        print(date_time_list)
-        print()
-        print(rain_list)
-        print()
-        print(temperature_list)
-        print()
-        print(snowfall_list)
+        return date_list, time_list, rain_list, temperature_list, snowfall_list
+               
     except:
         pass
 print(get_weather_data())

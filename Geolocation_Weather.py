@@ -14,21 +14,19 @@ def get_geolocation():
         lat (float): latitude of user's location
         lon (float): longitude of user's location
         city (str): city of user
-        country_code (str): country_code of user
+        country (str): country of user
     """
     endpoint1 = 'http://ip-api.com/json/'
     try: 
         response = requests.get(endpoint1)
         data = response.json()
-        # print(data)
         lat = data['lat']
         lon = data['lon']
         city = data['city']
-        country_code = data['countryCode']
-        return lat, lon, city, country_code
+        country = data['country']
+        return lat, lon, city, country
     except:
         pass
-print(get_geolocation())
 # print(get_geolocation.__doc__)
 
 

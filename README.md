@@ -1,2 +1,3 @@
-# Group_4_Practice_Repo
-This is the repository members of Group 4 Data science and AI Women Techsters 2024 participants use to practice collaboration and revise exercises
+# Weather Forecast Python Project
+## Overview
+This Python project utilizes API calls to fetch geolocation and weather forecast data based on the user's IP address. The main functionalities include retrieving the user's location details and providing weather forecast data.

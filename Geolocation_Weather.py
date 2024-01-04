@@ -63,3 +63,26 @@ def get_weather_data(lat, lon):
     except:
         pass
 print(get_weather_data())
+
+def write_to_file(date, time_list, rain_list, temperature_list, snowfall_list):
+    """writing extracted weather information to weather_data.txt file
+
+    Parameters:
+        date (str): current date of the user
+        time_list (list): 24 hours time range
+        rain_list (list): rain values in a 24 hours time range
+        temperature_list (list): temperature values in a 24 hours time range
+        snowfall_list (list): snowfall value in a 24 hours time range
+
+    Return:
+        
+       
+    """
+    with open('weather_data.txt','w') as text_file:
+        for index, rain_value in enumerate(rain_list):
+            current_time = time_list[index]
+            temperature =  temperature_list[index]
+            snowfall_value = snowfall_list[index]
+            message = f"On {date}, at {current_time}: rain is {rain_value}mm, \
+temperature is {temperature}degree celsius, snowfall is {snowfall_value}cm"
+            text_file.write(message + '\n')

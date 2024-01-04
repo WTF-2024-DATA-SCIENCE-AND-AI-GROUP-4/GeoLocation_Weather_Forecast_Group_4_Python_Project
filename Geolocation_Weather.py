@@ -74,21 +74,24 @@ def get_weather_data():
         pass
 print(get_weather_data())
 
-
-# temp = []
-# snowfall =
-# rainfall =
-# city =
-  
-def weather_conditions(temperature_2m):
-    temperature_2m = get_weather_data()
-    if temperature_2m<= 0:
-        print("There is going to be snowfall today")
-    elif 0 < temperature_2m < 27:
-            print("It's going to rain today")
-    elif temperature_2m > 27:
-            print("It's going to be a sunny day")
-    else :
-            print("No  weather information ")
-    print(weather_conditions(temperature_2m))
+ 
+def print_weather_message(city, country, date, rain_list, temperature_list, snowfall_list):
+    is_snowy = False
+    print(f"For today, {date}, in {city} {country}, the following information would be useful.")
+    for rain_value in rain_list:
+        if rain_value > 0.0:
+            is_rainy = True
+    for temperature in temperature_list:
+        if temperature <= 0:
+            print("It's going to be chilly today. Be sure to dress warm!")
+            break
+        elif temperature < 27:
+            print("It's going to be quite cold today. Be sure to carry a sweater!")
+            break
+        else:
+            is_rainy = False
+    for snow_value in snowfall_list:
+        if snow_value < 0.0:
+            is_snowy = True  
+    
     

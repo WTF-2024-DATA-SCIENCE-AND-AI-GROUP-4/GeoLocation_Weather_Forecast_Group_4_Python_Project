@@ -73,7 +73,7 @@ def write_to_file(date, time_list, rain_list, temperature_list, snowfall_list):
         snowfall_list (list): snowfall value in a 24 hours time range
 
     Return:
-        
+        None
        
     """
     with open('weather_data.txt','w') as text_file:
@@ -84,3 +84,25 @@ def write_to_file(date, time_list, rain_list, temperature_list, snowfall_list):
             message = f"On {date}, at {current_time}: rain is {rain_value}mm, \
 temperature is {temperature}degree celsius, snowfall is {snowfall_value}cm"
             text_file.write(message + '\n')
+
+ 
+def print_weather_message(city, country, date, rain_list, temperature_list, snowfall_list):
+    is_snowy = False
+    print(f"For today, {date}, in {city} {country}, the following information would be useful.")
+    for rain_value in rain_list:
+        if rain_value > 0.0:
+            is_rainy = True
+    for temperature in temperature_list:
+        if temperature <= 0:
+            print("It's going to be chilly today. Be sure to dress warm!")
+            break
+        elif temperature < 27:
+            print("It's going to be quite cold today. Be sure to carry a sweater!")
+            break
+        else:
+            is_rainy = False
+    for snow_value in snowfall_list:
+        if snow_value < 0.0:
+            is_snowy = True  
+    
+    

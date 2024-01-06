@@ -48,7 +48,7 @@ def get_weather_data(lat, lon):
 
     try:
         response = requests.get(endpoint)
-        # print(response.status_code)
+        response.raise_for_status()
         data = response.json()
         date_time_list = data['hourly']['time']
         date_list = [i[0:10] for i in date_time_list]
@@ -58,8 +58,10 @@ def get_weather_data(lat, lon):
         snowfall_list = data['hourly']['snowfall']
         return date_list, time_list, rain_list, temperature_list, snowfall_list
                
-    except:
-        pass
+    except requests.exceptions.HTTPError as error:
+        print("Error fetching weather data")
+        print(error.response.status_code)
+        return None
 
 def write_to_file(date, time_list, rain_list, temperature_list, snowfall_list):
     """writing extracted weather information to weather_data.txt file

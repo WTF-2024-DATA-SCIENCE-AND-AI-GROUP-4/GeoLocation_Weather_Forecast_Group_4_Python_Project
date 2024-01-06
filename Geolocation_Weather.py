@@ -88,6 +88,19 @@ temperature is {temperature}degree celsius, snowfall is {snowfall_value}cm"
 
  
 def print_weather_message(city, country, date, rain_list, temperature_list, snowfall_list):
+    """  This function prints a weather message stating what kind of weather to expect in the day.
+    
+    Parameters; 
+        city(str); users city
+        country(str); users country
+        date(str); current date
+        rain_list (list); list of rainfall data in 24hrs span
+        temperature_list(list); list of temperature data in 24hrs span
+        snowfall_list(list); list of snowfall data in 24hrs span
+        
+    Return; 
+        None  
+    """
     is_very_cold = False
     is_normal = False
     is_hot = False
@@ -106,6 +119,13 @@ def print_weather_message(city, country, date, rain_list, temperature_list, snow
         is_hot = True
     else:
         is_normal = True
+    
+    if is_very_cold:
+        print("It's going to be very cold today. Be sure to dress warm!")
+    if is_normal:
+        print("You have a good weather ahead")
+    if is_hot:
+        print("It is going to be a really sunny day. Carry a bottle of water with you!")
      
 def main():
     # Print welcome message

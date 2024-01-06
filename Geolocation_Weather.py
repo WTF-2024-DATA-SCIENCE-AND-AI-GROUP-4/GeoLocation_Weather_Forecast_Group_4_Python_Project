@@ -1,8 +1,5 @@
 # importing the requests module for calling APIs
-#import requests
-from pip._vendor import requests
-from datetime import datetime as dt
-from pprint import pprint as pp
+import requests
 
 def get_geolocation():
     """Get the users location using ip address and returning extracted information
@@ -51,7 +48,7 @@ def get_weather_data(lat, lon):
 
     try:
         response = requests.get(endpoint)
-        print(response.status_code)
+        # print(response.status_code)
         data = response.json()
         date_time_list = data['hourly']['time']
         date_list = [i[0:10] for i in date_time_list]
@@ -63,7 +60,6 @@ def get_weather_data(lat, lon):
                
     except:
         pass
-print(get_weather_data())
 
 def write_to_file(date, time_list, rain_list, temperature_list, snowfall_list):
     """writing extracted weather information to weather_data.txt file
@@ -109,3 +105,42 @@ def print_weather_message(city, country, date, rain_list, temperature_list, snow
     else:
         is_normal = True
      
+def main():
+    # Print welcome message
+    print("Welcome to our Geolocation Weather program!")
+    
+    # Get user's location from their IP address automatically
+    geolocation_data = get_geolocation()
+
+    # Check that there are no errors arising when calling the geolocation API
+    if geolocation_data is not None:
+        lat, lon, city, country = geolocation_data
+
+        # Round latitude and longitude to two decimal places for the get_weather_data() function
+        lat = round(lat, 2)
+        lon = round(lon, 2)
+
+        # Get weather data at that location
+        weather_data = get_weather_data(lat, lon)
+
+        # Check that there are no errors arising when calling the weather API
+        if weather_data is not None:
+            date_list, time_list, rain_list, temperature_list, snowfall_list = weather_data
+
+            # Extract date as a string
+            date = date_list[0]
+
+            # Write weather information to a file 
+            write_to_file(date, time_list, rain_list, temperature_list, snowfall_list)
+
+            # Print weather message based on data received
+            print_weather_message(city, country, date, rain_list, temperature_list, snowfall_list)
+        
+        else:
+            print("Weather data not available")
+        
+    else:
+        print("Geolocation data not available")
+
+# Call main function to run the code
+main()

@@ -19,14 +19,17 @@ def get_geolocation():
     endpoint1 = 'http://ip-api.com/json/'
     try: 
         response = requests.get(endpoint1)
+        response.raise_for_status()
         data = response.json()
         lat = data['lat']
         lon = data['lon']
         city = data['city']
         country = data['country']
         return lat, lon, city, country
-    except:
-        pass
+    except requests.exceptions.HTTPError as error:
+        print("Error fetching geolocation data")
+        print(error.response.status_code)
+        return None
 # print(get_geolocation.__doc__)
 
 
@@ -87,22 +90,22 @@ temperature is {temperature}degree celsius, snowfall is {snowfall_value}cm"
 
  
 def print_weather_message(city, country, date, rain_list, temperature_list, snowfall_list):
-    is_snowy = False
+    is_very_cold = False
+    is_normal = False
+    is_hot = False
+
     print(f"For today, {date}, in {city} {country}, the following information would be useful.")
-    for rain_value in rain_list:
-        if rain_value > 0.0:
-            is_rainy = True
-    for temperature in temperature_list:
-        if temperature <= 0:
-            print("It's going to be chilly today. Be sure to dress warm!")
-            break
-        elif temperature < 27:
-            print("It's going to be quite cold today. Be sure to carry a sweater!")
-            break
-        else:
-            is_rainy = False
-    for snow_value in snowfall_list:
-        if snow_value < 0.0:
-            is_snowy = True  
-    
-    
+    if 0.0 not in rain_list:
+        print("There's a possibility of it raining today. Be sure to carry an umbrella.")
+    if 0.0 not in snowfall_list:
+        print("There's a possibility of it snowing today. Be sure to dress for the weather.")
+
+    very_cold_temperatures = [i for i in temperature_list if i <= 0]
+    hot_temperatures = [i for i in temperature_list if i > 27]
+    if len(very_cold_temperatures) > 0:
+        is_very_cold = True
+    elif len(hot_temperatures) > 0:
+        is_hot = True
+    else:
+        is_normal = True
+     

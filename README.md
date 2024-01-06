@@ -5,47 +5,51 @@ This project aims to provide users with weather information based on their geolo
 
 ## Contributors
 
-### Peace:
-Implemented the main() function to orchestrate the entire process, calling geolocation and weather functions, and handling errors.
+### [Peace Adamson](https://github.com/thatpeacegirl)
++ Implemented the main() function to orchestrate the entire process.
++ Calling geolocation and weather functions.
++ Handling errors.
 
-### Fatimah:
-Implemented the get_geolocation() function, which is responsible for obtaining the user's location based on their IP address.
-Utilized the requests module to send a request to the designated API URL, extracting latitude, longitude, city, and country information from the JSON response.
-Incorporated a try-except block to handle potential errors during the geolocation request.
+### [Fatimah Animashaun](https://github.com/FatimahAnimashaun):
++ Implemented the get_geolocation() function, which is responsible for obtaining the user's location based on their IP address.
++ Utilized the requests module to send a request to the designated API URL, extracting latitude, longitude, city, and country information from the JSON response.
++ Incorporated a try-except block to handle potential errors during the geolocation request.
 
-### Chidera:
-Implemented the get_weather_data(latitude, longitutude) function to fetch weather data based on the provided location.
-Saved the API URL in a variable.
-Attempted to fetch weather data using the provided latitude and longitude.
-Called the API using the get method..
-Incorporated a try-except block to handle potential errors during the geolocation request.
+### [Chidera Mba](https://github.com/ChideraFrancisca):
++ Implemented the get_weather_data(latitude, longitutude) function to fetch weather data based on the provided location.
++ Saved the API URL in a variable.
++ Attempted to fetch weather data using the provided latitude and longitude.
++ Called the API using the get method..
++ Incorporated a try-except block to handle potential errors during the geolocation request.
 
-### Nancy:
-Created the print_weather_message(weather_conditions) function to generate user-friendly messages about the weather conditions.
-Provided detailed logic for generating messages based on weather conditions.
-Printed a message string.
+### [Nancy Dzikunu-Bansah](https://github.com/AnatabaKyorku):
++ Created the print_weather_message(weather_conditions) function to generate user-friendly messages about the weather conditions.
++ Provided detailed logic for generating messages based on weather conditions.
++ Printed a message string.
 
-### Folayemi:
-Wrote information about the weather data to a text file.
+### [Folayemi Oladotun](https://github.com/TechyFola):
++ Wrote information about the weather data to a text file.
++ Ensured team collaboration.
++ Set up and organized team meetings.
 
-### Titilayo:
-Collaborated with Nancy on the print weather message function to update function logic.
+### [Titilayo Dada](https://github.com/TITILAYODADA):
++ Collaborated with Nancy on the print weather message function to update function logic.
 
-### Uduak:
-Collaborated on error handling within the get_weather_data function.
-Handled HTTP errors during the weather data request.
+### [Uduak Njoku](https://github.com/TITILAYODADA):
++ Collaborated on error handling within the get_weather_data function.
++ Handled HTTP errors during the weather data request.
 
-### Ibinabo:
-Responsible for all forms of documentation.
-Set up the GitHub repository.
-Resolved conflicts and merged pull requests to the main branch.
-Ensured team collaboration.
-Set up and organized team meetings.
-Created presentation documents.
+### [Ibinabo Adiela](https://github.com/lilyflowr):
++ Responsible for all forms of documentation.
++ Set up the GitHub repository.
++ Resolved conflicts and merged pull requests to the main branch.
++ Ensured team collaboration.
++ Set up and organized team meetings.
++ Created presentation documents.
 
-### Gladys:
-Collaborated on error handling within the geolocation function.
-Handled HTTP errors during the weather data request.
+### [Gladys Emmanuel](https://github.com/Oziohuu):
++ Collaborated on error handling within the geolocation function.
++ Handled HTTP errors during the weather data request.
 
 # Functionality
 
@@ -73,4 +77,3 @@ To run the program, execute the main() function. Observe the generated weather i
 
 ## Important Note
 Ensure that you have internet connectivity for smooth running.
-

@@ -19,14 +19,17 @@ def get_geolocation():
     endpoint1 = 'http://ip-api.com/json/'
     try: 
         response = requests.get(endpoint1)
+        response.raise_for_status()
         data = response.json()
         lat = data['lat']
         lon = data['lon']
         city = data['city']
         country = data['country']
         return lat, lon, city, country
-    except:
-        pass
+    except requests.exceptions.HTTPError as error:
+        print("Error fetching geolocation data")
+        print(error.response.status_code)
+        return None
 # print(get_geolocation.__doc__)
 
 

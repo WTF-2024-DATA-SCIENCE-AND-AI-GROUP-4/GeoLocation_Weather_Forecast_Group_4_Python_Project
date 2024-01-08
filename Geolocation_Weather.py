@@ -58,9 +58,11 @@ def get_weather_data(lat, lon):
         snowfall_list = data['hourly']['snowfall']
         return date_list, time_list, rain_list, temperature_list, snowfall_list
                
-    except requests.exceptions.HTTPError as error:
-        print("Error fetching weather data")
-        print(error.response.status_code)
+    except requests.exceptions.RequestException as error:
+        if hasattr(error, 'response') and error.response is not None:
+            print(f"Error fetching weather data. Status code: {error.response.status_code}")
+        else:
+            print("Error fetching weather data")
         return None
 
 def write_to_file(date, time_list, rain_list, temperature_list, snowfall_list):

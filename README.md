@@ -72,8 +72,52 @@ Provides suggestions for the day, considering rainy, sunny, or other weather con
 Orchestrates the entire process, calling geolocation and weather functions, and handling errors.
 Generates an introductory message.
 
-## Usage
-To run the program, execute the main() function. Observe the generated weather information and messages.
 
+## Usage
+### Pre-requisites
+1. Install Python:
++ If you don't have Python installed, follow this guide on [How to install Python](https://realpython.com/installing-python/).
+
+2. Install git
++ If you do not have git installed, follow this guide on [How to install git on Window, Mac Os and Linux](https://kinsta.com/knowledgebase/install-git/)
+
+3. Install your favourite IDE.
++ In this guide we would use VsCode
+
+4.  Install required dependencies
++ Open your terminal or command prompt and run the following command to install the necessary module:
+
+```bash
+pip install requests
+```
++ If this method doesn't work use the following command:
+
+```
+
+```
+3. Clone the repository:
++ Copy the repository's URL:
+ https://github.com/WTF-2024-DATA-SCIENCE-AND-AI-GROUP-4/GeoLocation_Weather_Forecast_Group_4_Python_Project.git
+
++ In your terminal, navigate to the directory where you want to clone the project and run:
+
+```bash
+git clone https://github.com/WTF-2024-DATA-SCIENCE-AND-AI-GROUP-4GeoLocation_Weather_Forecast_Group_4_Python_Project.git
+```
+
+
+4. Navigate to the project directory:
++ Change your working directory to the cloned project folder:
+
+```bash
+cd GeoLocation_Weather_Forecast_Group_4_Python_Project\
+```
+
+5. Run the program:
++ Run the code by clicking the run icon ![run icon](https://i.imgur.com/ZQJEyvd.png) or use the shortcut (Ctrl/Cmd+Alt+N)
++ Observe the generated weather information and messages.
++ The program will display weather information and messages based on your geolocation.
+
+Now you can successfully use the Weather Forecast Project on your local machine. 
 ## Important Note
-Ensure that you have internet connectivity for smooth running.
++ Make sure to have internet connectivity for smooth running.

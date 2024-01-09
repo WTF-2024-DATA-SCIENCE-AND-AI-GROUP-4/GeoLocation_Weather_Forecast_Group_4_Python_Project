@@ -103,7 +103,7 @@ pip install requests
 + If this method doesn't work use the following command:
 
 ```
-
+pip._vendor import requests
 ```
 3. Clone the repository:
 + Copy the repository's URL:

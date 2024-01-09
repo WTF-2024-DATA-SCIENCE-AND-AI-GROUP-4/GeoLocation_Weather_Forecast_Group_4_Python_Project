@@ -35,7 +35,7 @@ This project aims to provide users with weather information based on their geolo
 ### [Titilayo Dada](https://github.com/TITILAYODADA):
 + Collaborated with Nancy on the print weather message function to update function logic.
 
-### [Uduak Njoku](https://github.com/TITILAYODADA):
+### [Uduak Njoku](https://github.com/UduakN):
 + Collaborated on error handling within the get_weather_data function.
 + Handled HTTP errors during the weather data request.
 
@@ -50,6 +50,16 @@ This project aims to provide users with weather information based on their geolo
 ### [Gladys Emmanuel](https://github.com/Oziohuu):
 + Collaborated on error handling within the geolocation function.
 + Handled HTTP errors during the weather data request.
+
+
+# APIs Used
+We utitlized two APIs for our project.
++ Weather API sourced from [Open-Meteo.com](http://Open-Meteo.com)
+API link:https://api.open-meteo.com
+
++ Geolocation API sourced from [ipwhois.io](http://ipwhois.io)
+API link:http://ip-api.com/
+
 
 # Functionality
 
@@ -72,8 +82,63 @@ Provides suggestions for the day, considering rainy, sunny, or other weather con
 Orchestrates the entire process, calling geolocation and weather functions, and handling errors.
 Generates an introductory message.
 
-## Usage
-To run the program, execute the main() function. Observe the generated weather information and messages.
 
+## Usage
+### Pre-requisites
+1. Install Python:
++ If you don't have Python installed, follow this guide on [How to install Python](https://realpython.com/installing-python/).
+
+2. Install git
++ If you do not have git installed, follow this guide on [How to install git on Window, Mac Os and Linux](https://kinsta.com/knowledgebase/install-git/)
+
+3. Install your favourite IDE.
++ In this guide we would use VsCode
+
+4.  Install required dependencies
++ Open your terminal or command prompt and run the following command to install the necessary module:
+
+```bash
+pip install requests
+```
++ If this method doesn't work use the following command:
+
+```
+
+```
+3. Clone the repository:
++ Copy the repository's URL:
+ https://github.com/WTF-2024-DATA-SCIENCE-AND-AI-GROUP-4/GeoLocation_Weather_Forecast_Group_4_Python_Project.git
+
++ In your terminal, navigate to the directory where you want to clone the project and run:
+
+```bash
+git clone https://github.com/WTF-2024-DATA-SCIENCE-AND-AI-GROUP-4GeoLocation_Weather_Forecast_Group_4_Python_Project.git
+```
+
+
+4. Navigate to the project directory:
++ Change your working directory to the cloned project folder:
+
+```bash
+cd GeoLocation_Weather_Forecast_Group_4_Python_Project\
+```
+
+5. Run the program:
++ Run the code by clicking the run icon ![run icon](https://i.imgur.com/ZQJEyvd.png) or use the shortcut (Ctrl/Cmd+Alt+N)
++ Observe the generated weather information and messages.
++ The program will display weather information and messages based on your geolocation.
++ This is an example of the information you will get when you run the code:
+![weatherTextFile](https://i.imgur.com/ST7cxa5.png)
+
+Now you can successfully use the Weather Forecast Project on your local machine. 
+## Further Improvements Going Forward:
++ Creating a user-friendly website that can automatically detects the user's location and gives customized weather forcasts.
 ## Important Note
-Ensure that you have internet connectivity for smooth running.
++ Make sure to have internet connectivity for smooth running.
+
+## Limitations:
++ The Geolocation API gives an approximate location.
++ This limitation is due to the guidelines for this project (Making use of Keyless APIs)
+
+## Further Improvements Going Forward:
++ Creating a user-friendly website that can automatically detect the user's location and gives customized weather forecasts.

@@ -35,7 +35,7 @@ This project aims to provide users with weather information based on their geolo
 ### [Titilayo Dada](https://github.com/TITILAYODADA):
 + Collaborated with Nancy on the print weather message function to update function logic.
 
-### [Uduak Njoku](https://github.com/TITILAYODADA):
+### [Uduak Njoku](https://github.com/UduakN):
 + Collaborated on error handling within the get_weather_data function.
 + Handled HTTP errors during the weather data request.
 
@@ -50,6 +50,16 @@ This project aims to provide users with weather information based on their geolo
 ### [Gladys Emmanuel](https://github.com/Oziohuu):
 + Collaborated on error handling within the geolocation function.
 + Handled HTTP errors during the weather data request.
+
+
+# APIs Used
+We utitlized two APIs for our project.
++ Weather API sourced from [Open-Meteo.com](http://Open-Meteo.com)
+API link:https://api.open-meteo.com
+
++ Geolocation API sourced from [ipwhois.io](http://ipwhois.io)
+API link:http://ip-api.com/
+
 
 # Functionality
 
@@ -117,7 +127,18 @@ cd GeoLocation_Weather_Forecast_Group_4_Python_Project\
 + Run the code by clicking the run icon ![run icon](https://i.imgur.com/ZQJEyvd.png) or use the shortcut (Ctrl/Cmd+Alt+N)
 + Observe the generated weather information and messages.
 + The program will display weather information and messages based on your geolocation.
++ This is an example of the information you will get when you run the code:
+![weatherTextFile](https://i.imgur.com/ST7cxa5.png)
 
 Now you can successfully use the Weather Forecast Project on your local machine. 
+## Further Improvements Going Forward:
++ Creating a user-friendly website that can automatically detects the user's location and gives customized weather forcasts.
 ## Important Note
 + Make sure to have internet connectivity for smooth running.
+
+## Limitations:
++ The Geolocation API gives an approximate location.
++ This limitation is due to the guidelines for this project (Making use of Keyless APIs)
+
+## Further Improvements Going Forward:
++ Creating a user-friendly website that can automatically detect the user's location and gives customized weather forecasts.

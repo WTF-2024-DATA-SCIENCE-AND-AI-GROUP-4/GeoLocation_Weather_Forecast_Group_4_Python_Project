@@ -131,8 +131,7 @@ cd GeoLocation_Weather_Forecast_Group_4_Python_Project\
 ![weatherTextFile](https://i.imgur.com/ST7cxa5.png)
 
 Now you can successfully use the Weather Forecast Project on your local machine. 
-## Further Improvements Going Forward:
-+ Creating a user-friendly website that can automatically detects the user's location and gives customized weather forcasts.
+
 ## Important Note
 + Make sure to have internet connectivity for smooth running.
 
